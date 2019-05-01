@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Segment Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6E-tn-3xN">
-                                <rect key="frame" x="98" y="52" width="179" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Array Numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6E-tn-3xN">
+                                <rect key="frame" x="100" y="52" width="175.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50457584110313414" green="0.95686274510000002" blue="0.61146080919533685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-ST-Mko">
@@ -29,42 +29,55 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="862-rW-8hc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-AS-VeZ">
-                                <rect key="frame" x="8" y="89" width="359" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wlk-az-frM"/>
-                                </connections>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-uO-8pV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-uO-8pV">
                                 <rect key="frame" x="8" y="135" width="179.5" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IKc-Nz-Ojr" customClass="CustomTableViewCell" customModule="SegmentedControl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="179.5" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="20" id="IKc-Nz-Ojr" customClass="CustomTableViewCell" customModule="SegmentedControl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="179.5" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IKc-Nz-Ojr" id="PNY-1U-WBu">
-                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-CN-wtU">
-                                                    <rect key="frame" x="69" y="11.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zab-jt-s61">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179.5" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-nU-eis">
+                                                            <rect key="frame" x="69" y="-1.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98710615511749122" green="0.15981359149500807" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="QZ0-nU-eis" firstAttribute="centerX" secondItem="Zab-jt-s61" secondAttribute="centerX" id="BTb-FV-zKk"/>
+                                                        <constraint firstItem="QZ0-nU-eis" firstAttribute="centerY" secondItem="Zab-jt-s61" secondAttribute="centerY" id="zlb-HZ-Vjw"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BWF-CN-wtU" firstAttribute="centerY" secondItem="PNY-1U-WBu" secondAttribute="centerY" id="HB4-gd-uAn"/>
-                                                <constraint firstItem="BWF-CN-wtU" firstAttribute="centerX" secondItem="PNY-1U-WBu" secondAttribute="centerX" id="Pn5-UA-HA3"/>
+                                                <constraint firstItem="Zab-jt-s61" firstAttribute="leading" secondItem="PNY-1U-WBu" secondAttribute="leading" id="GsX-dz-QAF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zab-jt-s61" secondAttribute="bottom" constant="2" id="XyS-Bv-Ywb"/>
+                                                <constraint firstItem="Zab-jt-s61" firstAttribute="top" secondItem="PNY-1U-WBu" secondAttribute="top" id="gtd-ZW-iij"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zab-jt-s61" secondAttribute="trailing" id="pcI-vs-bwQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="numberLabel" destination="BWF-CN-wtU" id="yIv-Iv-TJf"/>
+                                            <outlet property="displayLabel" destination="QZ0-nU-eis" id="oJ2-Ip-dQD"/>
+                                            <outlet property="displayView" destination="Zab-jt-s61" id="xQ0-mp-fi6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,6 +86,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ngp-dN-GOO"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-AS-VeZ">
+                                <rect key="frame" x="8" y="89" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Numbers"/>
+                                    <segment title="Names"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wlk-az-frM"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

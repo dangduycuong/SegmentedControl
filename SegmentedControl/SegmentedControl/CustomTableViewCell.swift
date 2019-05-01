@@ -10,7 +10,10 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    @IBOutlet weak var displayView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

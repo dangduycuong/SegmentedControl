@@ -23,46 +23,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var leadingTableView: NSLayoutConstraint!
     
     
+    
     var names = ["A", "B", "C", "D", "E", "F"]
     
     var numbers = [Int](0...4)
     
-    var display = [Int]()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        setData()
+        textLabel.textColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     }
     
     let width = UIScreen.main.bounds.width / 2 - 8
     
     
-//    var choose: Bool = true {
-//        didSet {
-//
-//        }
-//    }
-    
-    func setData() {
-        display = numbers
-    }
-    
     @IBAction func indexChanged(_ sender: Any)  {
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            textLabel.text = "First Segment Selected"
-            //display = names
+            textLabel.text = "Array Numbers"
+            textLabel.textColor = UIColor.groupTableViewBackground
+            
             UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
-                
                 self.leadingTableView.constant = 8
                 self.leadingView.constant = 8
-                //self.animationView.bounds.width = width
+                
                 self.view.layoutIfNeeded()
             }) { (animationComplete) in
                 print("The animation is complete!")
+                print(self.segmentedControl.selectedSegmentIndex)
             }
             
             
@@ -75,23 +63,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.view.layoutIfNeeded()
             }) { (animationComplete) in
                 print("The animation is complete!")
+                print(self.segmentedControl.selectedSegmentIndex)
             }
-            textLabel.text = "Second Segment Selected"
+            textLabel.text = "Array Names"
+            textLabel.textColor = UIColor.green
+            break
+        }
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            return numbers.count
+        default:
+            return names.count
             break
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return display.count
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        //cell.numberLabel.text = String(indexPath.row)
-        cell.numberLabel.text = String(display[indexPath.row])
+
+        if segmentedControl.selectedSegmentIndex == 0 {
+            cell.displayLabel.text = String(numbers[indexPath.row])
+            cell.displayView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+            textLabel.textColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        } else {
+            cell.displayLabel.text = names[indexPath.row]
+            cell.displayView.backgroundColor = UIColor.green
+        }
         return cell
     }
     
-
 }
 
